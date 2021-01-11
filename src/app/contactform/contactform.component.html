@@ -1,0 +1,56 @@
+<form  (ngSubmit)="onSubmit(contactFrm)"  [formGroup]="contactFrm">
+  <h2>{{data.modalTitle}}</h2>
+  
+  <div>
+      <mat-form-field appearance="outline">
+      <mat-label>Name</mat-label>
+      <input matInput placeholder="Name" formControlName="name">
+      <mat-error *ngIf="formErrors.name">
+        {{ formErrors.name }}
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field appearance="outline">
+      <mat-label>Surname</mat-label>
+      <input type="surname" matInput placeholder="surname" formControlName="surname">
+      <mat-error *ngIf="formErrors.surname">
+        {{ formErrors.surname }}
+      </mat-error>
+    </mat-form-field>
+  
+  </div>
+  <div>
+    <mat-form-field appearance="outline">
+      <mat-label>Address</mat-label>
+      <input type="surname" matInput placeholder="address" formControlName="address">
+      <mat-error *ngIf="formErrors.address">
+        {{ formErrors.address }}
+      </mat-error>
+    </mat-form-field>
+  </div>
+    <div>
+    <mat-form-field appearance="outline">
+      <mat-label>Homephone</mat-label>
+      <input type="homephone" matInput placeholder="homephone" formControlName="homephone">
+      <mat-error *ngIf="formErrors.homephone">
+        {{ formErrors.homephone }}
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field appearance="outline">
+	 <mat-label>Cellphone</mat-label>
+      <input type="cellphone" matInput placeholder="cellphone" formControlName="cellphone">
+      <mat-error *ngIf="formErrors.cellphone ">
+        {{ formErrors.cellphone }}
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <div>
+  
+    <button type="button" mat-raised-button color="warn" (click)="dialogRef.close()">Cancel</button>&nbsp;
+    <button type="submit" mat-raised-button color="primary" [disabled]="contactFrm.invalid">{{data.modalBtnTitle}}</button>
+  </div>
+  
+  </form>
